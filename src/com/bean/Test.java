@@ -3,7 +3,7 @@ package com.bean;
 public class Test {
 
 	public static void main (String [] args) {
-			System.out.println("test1");
+			
 System.out.println("test2");
 
 		int[] arr= {4,-12,8,9,1,3,13,-2,9};
