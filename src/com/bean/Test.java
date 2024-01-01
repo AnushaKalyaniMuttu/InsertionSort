@@ -3,17 +3,26 @@ package com.bean;
 public class Test {
 
 	public static void main (String [] args) {
+			System.out.println("test1");
+System.out.println("test2");
+
 		int[] arr= {4,-12,8,9,1,3,13,-2,9};
 		print(arr);
 		System.out.println();
-		for(int firstUnsortedArray=1;firstUnsortedArray<arr.length;firstUnsortedArray++) {
-			int valueToInsert=arr[firstUnsortedArray];
+		
+		for(int gap=arr.length/2;gap>0;gap/=2) {
 			
-			int i;
-			for(i=firstUnsortedArray;i>0 && arr[i-1]>valueToInsert;i--) {
-				arr[i]=arr[i-1];
+			for(int i=gap;i<arr.length;i++) {
+				int newElement=arr[i];
+				
+				int j=i;
+				while(j>=gap && arr[j-gap]>newElement) {
+					arr[j]=arr[j-gap];
+					j-=gap;
+				}
+				arr[j]=newElement;
 			}
-			arr[i]=valueToInsert;
+			
 		}
 		print(arr);
 	}
